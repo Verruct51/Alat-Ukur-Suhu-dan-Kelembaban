@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "author": "Alvin Anugerah",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 19.2, "left": -129.56, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -105.3, "left": -101.4, "attrs": {} },
+    { "type": "wokwi-lcd1602", "id": "lcd1", "top": 16, "left": 34.4, "attrs": { "pins": "i2c" } }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "dht1:VCC", "esp:3V3", "red", [ "v0", "h-38.4" ] ],
+    [ "dht1:GND", "esp:GND.2", "black", [ "v0", "h28.8" ] ],
+    [ "dht1:SDA", "esp:15", "green", [ "v19.2", "h76.9", "v105.6", "h0", "v9.6", "h0", "v48" ] ],
+    [ "lcd1:VCC", "esp:3V3", "red", [ "h-19.2", "v-38.3", "h-144" ] ],
+    [ "lcd1:GND", "esp:GND.3", "black", [ "h-28.8", "v57.6" ] ],
+    [ "lcd1:SDA", "esp:21", "cyan", [ "h-48", "v29" ] ],
+    [ "lcd1:SCL", "esp:22", "yellow", [ "h-9.6", "v0.3" ] ]
+  ],
+  "dependencies": {}
+}
